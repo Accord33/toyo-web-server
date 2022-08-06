@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ICTlab</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style-smartphones.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style-pcs.css')}}">
+        <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+        <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/828286173700816947/976693328487792651/3_20220519125016.png">
+    </head>
+<body>
+    <div class="wrap">
+        <img class="logo" src="https://cdn.discordapp.com/attachments/828286173700816947/976693328487792651/3_20220519125016.png">
+        <a href="/home/index"><div class="box"><h2>ICTlab (徳竹研究室)</h2></div></a>
+        <a href="/home/index"><div class="box box1">ICTlabについて</div></a>
+        <a href="/home/team"><div class="box box2">研究班紹介</div></a>
+        <a href="/home/member"><div class="box box3">メンバー</div></a>
+        <a href="/home/404"><div class="box box4">実績</div></a>
+        <a href="/home/404"><div class="box box5">制作物紹介</div></a>
+        <a href="/home/blog"><div class="box box6">メンバーブログ</div></a>
+    </div>
+    <header>
+        <img class="logo" src="https://cdn.discordapp.com/attachments/828286173700816947/976693328487792651/3_20220519125016.png">
+        <h3>ICTLabo (徳竹研究室)</h3>
+        <p id="menu">menu</p>
+        <nav id="nav" class="navi">
+            <ul>
+            <li><a href="/home/index">ICTlabについて</a></li>
+            <li><a href="/home/team">研究班紹介</a></li>
+            <li><a href="/home/member">メンバー</a></li>
+            <li><a href="/home/404">実績</a></li>
+            <li><a href="/home/404">制作物紹介</a></li>
+            <li><a href="/home/blog">メンバーブログ</a></li>
+            </ul>    
+        </nav>
+    <div id="back" class="menu-background"></div>
+    </header>
+
+    </div>
+
+    <main>
+        <div class="flame1">
+            <h2>NEWS</h2>
+            {% for data in news %}
+            <a href="{{url_for('news',page=data['title'])}}">
+                <div class="news">
+                    <p>{{data['date']}}</p>
+                    <h3>{{data['title']}}</h3>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="flame2">
+            <h2>教育目標</h2>
+            <p>原理と原則、本質を重視したサイエンスの視点を磨き、確かな「ものの見方・考え方」とともに、世の中の変化に冷静に対応できるフレキシブルさを携える。
+                未知なる分野への挑戦を恐れない、創造性豊かなエンジニアを育成します。</p>
+            <h2>概要</h2>
+            <p>Information Communication Technologyに興味のある生徒がそれぞれの探究心と好奇心に従って自由に研究できる場を提供します。基本的に教師は介入せずに生徒同士が話し合い教えあうことで情報を共有する力、ICTを活用する力を培い「未来の日本を担う21世紀型の実践的エンジニア」を育成することを目的としています</p>
+            <div class="_none"></div>
+        </div>
+        <div class="flame2">
+            <h2>ICTLABのよくある質問</h2>
+            <h3>Q. 活動内容を教えて下さい</h3>
+            <p>主にプログラミングを始めとして、3DプリンタやVRなどを活用してアプリやゲームを作っています。
+             昨年度はテックコンテストに出場し、ictlaboの作ったアプリケーションが入賞しました。
+    </p>
+            <h3>Q. ICTLabはいつ活動していますか？</h3>
+            <p>毎日放課後に三号館一階の教室で活動しています。テスト期間もLabは活動していますが参加は自由です。</p>
+            <h3>Q. 部活をしていますが、ラボに入れますか？</h3>
+            <p>入れます。部活との両立について心配な方は、遠慮なく相談してください。</p>
+            <h3>Q. ICTってなんか難しそう</h3>
+            <p>決して難しいことはありません。実はこの記事を書いている私も、高校に入るまではPC自体にほぼ触ったことがなく、最初はプログラミングに抵抗がありましたが、
+            先生にアドバイスをもらいながら取り組むと楽しくなり、今ではすっかり趣味になっています。
+                Labでは初心者も大歓迎！！先生や先輩が優しく教えてくれます！</p>
+            <div class="_none"></div>
+    </main>
+    <footer>
+        <div class="bottommenu">
+            <h1>東洋大学牛久高校ICTLab</h1>
+            <div><a href="/home/access">アクセス</a></div>
+            <div>プライバシーポリシー</div>
+            <div><a href="https://www.toyo.ac.jp/ja-JP/ushiku/sh/"> 東洋大学付属牛久高校について</a></div>
+            <div></div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

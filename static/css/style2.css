@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background:skyblue;
+    display: flex;
+}
+header h1 {
+    padding-left: 20px;
+}
+header p {
+    margin-left: auto;
+    cursor: pointer;
+    line-height: 46px;
+    padding-right: 20px;
+    z-index: 150;
+}
+.navi {
+  background: #0bd;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  width: 0; 
+  transition: 0.2s;
+  z-index: 100;
+}
+.open-menu {
+  width: 50%;   
+}
+nav ul {
+    padding: 50px 20px;
+}
+nav li {
+    list-style: none;
+    text-align: left;
+    padding: 10px 0;
+}
+nav li a {
+    display: block;
+}
+.menu-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 0;
+  height: 0;
+  background: black;
+  opacity: 0.8;
+}
+.open {
+  width: 100%;
+  height: 100%;
+}
