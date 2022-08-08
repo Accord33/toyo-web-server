@@ -1,2 +1,2 @@
 # toyo-web-server
-ict-lab.toyo-ushiku.jp
+https://ict-lab.toyo-ushiku.jp
