@@ -42,28 +42,16 @@
         <div class="flame1">
             <h2>Member's Blog</h2>
                 <div class="blog-all">
+                    {% for data in blog %}
                     <div class="blog-menu">
-                        <a href="/blog/404">
-                            <p class="date">2022/5/19</p>
-                            <img src="{{url_for('static',filename='img/python.png')}}">
-                            <h1>Python初心者向け</h1>
-                            <p>pythonやり始めたけど何をすればいいの？そんな疑問にお答えします。誰でも簡単にPython初心者から卒業できます！</p>
+                        <a href="{{url_for('blog', page=data['title'])}}">
+                            <p class="date">{{data['date']}}</p>
+                            <img src="{{url_for('static', filename=data['img'])}}">
+                            <h1>{{data['title']}}</h1>
+                            <p>{{data['contents']}}</p>
                         </a>
                     </div>
-                    <div class="blog-menu">
-                        <a href="/blog/404">
-                            <p class="date">2022/5/19</p>
-                            <h1>Title Sample</h1>
-                            <p>main Sample</p>
-                        </a>
-                    </div>
-                    <div class="blog-menu">
-                        <a href="/blog/404">
-                            <p class="date">2022/5/19</p>
-                            <h1>Title Sample</h1>
-                            <p>main Sample</p>
-                        </a>
-                    </div>
+                    {% endfor %}
                 </div>
             <div class="none"></div>
         </div>
